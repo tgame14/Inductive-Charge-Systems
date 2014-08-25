@@ -1,8 +1,8 @@
-package com.tgame.advfluxtools.blocks;
+package com.tgame.inductivecharge.blocks;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
-import com.tgame.advfluxtools.prefabs.TGTileEnergyHandler;
+import com.tgame.inductivecharge.prefabs.TGTileEnergyHandler;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 

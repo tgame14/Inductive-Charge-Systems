@@ -1,4 +1,4 @@
-package com.tgame.advfluxtools.blocks;
+package com.tgame.inductivecharge.blocks;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.TileEnergyHandler;

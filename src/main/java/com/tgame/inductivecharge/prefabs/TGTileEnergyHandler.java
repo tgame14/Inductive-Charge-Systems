@@ -1,4 +1,4 @@
-package com.tgame.advfluxtools.prefabs;
+package com.tgame.inductivecharge.prefabs;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;

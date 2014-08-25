@@ -1,10 +1,7 @@
-package com.tgame.advfluxtools;
+package com.tgame.inductivecharge;
 
-import com.tgame.advfluxtools.blocks.BlockChargePlatform;
-import com.tgame.advfluxtools.blocks.BlockCreativeGenerator;
-import com.tgame.advfluxtools.items.ItemLaserDrill;
-import com.tgame.advfluxtools.multiblocks.energy.BlockFluxBattery;
-import com.tgame.advfluxtools.multiblocks.furnace.BlockRFFurnace;
+import com.tgame.inductivecharge.blocks.BlockChargePlatform;
+import com.tgame.inductivecharge.blocks.BlockCreativeGenerator;
 import com.tgame.mods.config.ConfigHandler;
 import com.tgame.mods.libs.registry.IItemDefinition;
 import com.tgame.mods.libs.registry.RegistryHandler;
@@ -30,29 +27,25 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
  */
 @Mod(modid = Settings.ID, name = Settings.NAME, version = Settings.VERSION, dependencies = "after:" + Mods.TE3 + ";required-after:tgamecore" /*+ ";required-after" + Mods.COFH*/)
 @SuppressWarnings("unused")
-public class AdvancedFluxTools
+public class InductiveChargeSystems
 {
     @Mod.Instance(Settings.ID)
-    public static AdvancedFluxTools instance;
+    public static InductiveChargeSystems instance;
 
-    @SidedProxy(clientSide = "com.tgame.advfluxtools.ClientProxy", serverSide = "com.tgame.advfluxtools.CommonProxy")
+    @SidedProxy(clientSide = "ClientProxy", serverSide = "CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.Metadata
     public static ModMetadata metadata;
+
     public static ItemStack wrench;
 	public static ItemStack multimeter;
 
-    public static IItemDefinition itemLaserDrill;
     public static IItemDefinition blockChargePlatform;
 
-	public static IItemDefinition blockRFFurnace;
-	public static IItemDefinition blockRFFurnaceCasing;
-
-	public static IItemDefinition blockFluxBattery;
     private RegistryHandler registry;
 
-    public AdvancedFluxTools ()
+    public InductiveChargeSystems()
     {
         this.registry = new RegistryHandler();
     }
@@ -64,18 +57,7 @@ public class AdvancedFluxTools
         Settings.CONFIGURATION = new Configuration(event.getSuggestedConfigurationFile());
 
         blockChargePlatform = registry.registerBlock(new BlockChargePlatform(), BlockChargePlatform.class);
-
-        itemLaserDrill = registry.registerItem(new ItemLaserDrill(), ItemLaserDrill.class);
-
-		blockFluxBattery = registry.registerBlock(new BlockFluxBattery(), BlockFluxBattery.class);
-
-		blockRFFurnace = registry.registerBlock(new BlockRFFurnace(BlockRFFurnace.class.getSimpleName(), false), BlockRFFurnace.class);
-		blockRFFurnaceCasing = registry.registerBlock(new BlockRFFurnace(BlockRFFurnace.class.getSimpleName() + "-casing", true), BlockRFFurnace.class);
-
-
 		registry.registerBlock(new BlockCreativeGenerator(), BlockCreativeGenerator.class);
-
-		GameRegistry.registerCustomItemStack("laserDrill", itemLaserDrill.getItemStack(1, 1));
         proxy.preInit();
 
     }
@@ -122,10 +104,6 @@ public class AdvancedFluxTools
             GameRegistry.addRecipe(new ShapedOreRecipe(blockChargePlatform.getItemStack(1, 1), "CPC", "PEP", "CPC", 'C', hardenedConduit, 'P', ppIron, 'E', hardenedEnergy));
             GameRegistry.addRecipe(new ShapedOreRecipe(blockChargePlatform.getItemStack(1, 2), "CPC", "PEP", "CPC", 'C', redsConduit, 'P', ppIron, 'E', redsEnergy));
 
-            GameRegistry.addRecipe(new ShapedOreRecipe(itemLaserDrill.getItemStack(1, 0), " B ", " E ", "GG ", 'B', hardenedCapacitor, 'E', GameData.getItemRegistry().getObject("emerald"), 'G', gearElectrum));
-
-			GameRegistry.addRecipe(blockFluxBattery.getItemStack(1, 0), "SRS", "G G", "OOO", 'S', Blocks.iron_block, 'R', Items.redstone, 'G', Items.gold_ingot, 'O', Blocks.obsidian);
-
         }
         else
         {
@@ -145,10 +123,6 @@ public class AdvancedFluxTools
             GameRegistry.addRecipe(new ShapedOreRecipe(blockChargePlatform.getItemStack(1, 0), "CPC", "PEP", "CPC", 'C', redTorch, 'P', ppIron, 'E', soulSand));
             GameRegistry.addRecipe(new ShapedOreRecipe(blockChargePlatform.getItemStack(1, 1), "CPC", "PEP", "CPC", 'C', quartz, 'P', ppIron, 'E', soulSand));
             GameRegistry.addRecipe(new ShapedOreRecipe(blockChargePlatform.getItemStack(1, 2), "CPC", "PEP", "CPC", 'C', anvil, 'P', ppGold, 'E', enderEye));
-
-            GameRegistry.addRecipe(new ShapedOreRecipe(itemLaserDrill.getItemStack(1, 0), " B ", " E ", "GG ", 'B', redTorch, 'E', emerald, 'G', quartz));
-
-			GameRegistry.addShapedRecipe(blockFluxBattery.getItemStack(1, 0), " SRS", "G G", "OOO", 'S', ironBlock, 'R', Blocks.redstone_wire, 'G', Items.gold_ingot, 'O', Blocks.obsidian);
         }
 
         ConfigHandler.configure(Settings.CONFIGURATION, Settings.DOMAIN);

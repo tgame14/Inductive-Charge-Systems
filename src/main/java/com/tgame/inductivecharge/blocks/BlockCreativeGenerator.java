@@ -1,6 +1,6 @@
-package com.tgame.advfluxtools.blocks;
+package com.tgame.inductivecharge.blocks;
 
-import com.tgame.advfluxtools.AFTCreativeTab;
+import com.tgame.inductivecharge.ICSCreativeTab;
 import com.tgame.mods.libs.registry.BlockData;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -17,7 +17,7 @@ public class BlockCreativeGenerator extends BlockContainer
     public BlockCreativeGenerator ()
     {
         super(Material.sponge);
-        this.setCreativeTab(AFTCreativeTab.INSTANCE);
+        this.setCreativeTab(ICSCreativeTab.INSTANCE);
         this.setBlockName("creativepowerGenerator");
     }
 

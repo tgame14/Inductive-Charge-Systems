@@ -1,4 +1,4 @@
-package com.tgame.advfluxtools.utility;
+package com.tgame.inductivecharge.utility;
 
 import cofh.api.energy.IEnergyContainerItem;
 import cofh.api.energy.IEnergyHandler;

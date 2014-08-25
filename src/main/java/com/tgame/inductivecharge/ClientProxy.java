@@ -1,4 +1,4 @@
-package com.tgame.advfluxtools;
+package com.tgame.inductivecharge;
 
 /**
  * @author tgame14

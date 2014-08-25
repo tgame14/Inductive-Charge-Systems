@@ -72,6 +72,7 @@
     <orderEntry type="library" exported="" name="Gradle: lwjgl-platform-2.9.1-natives-osx" level="project" />
     <orderEntry type="library" exported="" name="Gradle: guava-17.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-lang3-3.3.2" level="project" />
+    <orderEntry type="module" module-name="tgame-core" />
   </component>
 </module>
 

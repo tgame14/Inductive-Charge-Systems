@@ -1,10 +1,10 @@
-package com.tgame.advfluxtools.blocks;
+package com.tgame.inductivecharge.blocks;
 
 import cofh.api.energy.IEnergyContainerItem;
-import com.tgame.advfluxtools.AFTCreativeTab;
-import com.tgame.advfluxtools.AdvancedFluxTools;
-import com.tgame.advfluxtools.Settings;
-import com.tgame.advfluxtools.blocks.itemblocks.ItemBlockMetadata;
+import com.tgame.inductivecharge.ICSCreativeTab;
+import com.tgame.inductivecharge.InductiveChargeSystems;
+import com.tgame.inductivecharge.Settings;
+import com.tgame.inductivecharge.blocks.itemblocks.ItemBlockMetadata;
 import com.tgame.mods.libs.registry.BlockData;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -40,7 +40,7 @@ public class BlockChargePlatform extends BlockContainer
     {
         super(Material.iron);
 
-        this.setCreativeTab(AFTCreativeTab.INSTANCE);
+        this.setCreativeTab(ICSCreativeTab.INSTANCE);
         this.setBlockName(this.getClass().getSimpleName());
         this.setHardness(3.0F);
         this.setResistance(5.0F);
@@ -155,7 +155,7 @@ public class BlockChargePlatform extends BlockContainer
     {
         if (!world.isRemote)
         {
-            if (player.getHeldItem() != null && player.getHeldItem().isItemEqual(AdvancedFluxTools.wrench))
+            if (player.getHeldItem() != null && player.getHeldItem().isItemEqual(InductiveChargeSystems.wrench))
             {
                 if (player.isSneaking())
                 {
