@@ -32,7 +32,7 @@ public class InductiveChargeSystems
     @Mod.Instance(Settings.ID)
     public static InductiveChargeSystems instance;
 
-    @SidedProxy(clientSide = "ClientProxy", serverSide = "CommonProxy")
+    @SidedProxy(clientSide = "com.tgame.inductivecharge.ClientProxy", serverSide = "com.tgame.inductivecharge.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.Metadata
@@ -81,7 +81,7 @@ public class InductiveChargeSystems
     public void postInit (FMLPostInitializationEvent event)
     {
         // RECIPES
-        if (Loader.isModLoaded(Mods.TE3))
+        if (Loader.isModLoaded(Mods.TE3) && false)
         {
             wrench = GameRegistry.findItemStack(Mods.TE3, "wrench", 1);
 			multimeter = GameRegistry.findItemStack(Mods.TE3, "multimeter", 1);
