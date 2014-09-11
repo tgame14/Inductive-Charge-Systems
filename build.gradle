@@ -9,10 +9,6 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-        maven {
-            name = "tgame-maven"
-            url = "http://tgame-mods.info/maven"
-        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
@@ -42,7 +38,15 @@ minecraft {
     assetDir = "eclipse/assets"
 }
 
+repositories {
+    maven {
+        name = "Tgame Maven"
+        url = "http://tgame-mods.info/maven"
+    }
+    mavenCentral()
+}
+
 dependencies {
-    compile "com.tgame.mods:tgame-core:LATEST:deobf"
+    compile group: 'com.tgame.mods', name: 'tgame-core', classifier: "deobf"
 
 }
