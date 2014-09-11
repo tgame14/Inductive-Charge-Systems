@@ -47,6 +47,6 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.tgame.mods', name: 'tgame-core', version: "${config.tgame-core_version}", classifier: "deobf"
+    compile group: 'com.tgame.mods', name: 'tgame-core', version: "${config.tgamecore_version}", classifier: "deobf"
 
 }
