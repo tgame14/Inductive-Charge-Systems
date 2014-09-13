@@ -1,0 +1,17 @@
+# Tooltips and Information
+info.laser.mode=激光模式: %m
+info.energy.level=能量级:
+
+# Blocks
+tile.BlockChargePlatform.0.name=铅石充能台
+tile.BlockChargePlatform.1.name=硬化充能台
+tile.BlockChargePlatform.2.name=红石充能台
+
+# Items
+item.ItemLaserDrill.name=RF激光钻
+
+# Creative Tab
+itemGroup.AFT=高级通量工具
+
+# Multiblocks
+multiblock.empty_interior.info=多方块结构中间必须空着!
